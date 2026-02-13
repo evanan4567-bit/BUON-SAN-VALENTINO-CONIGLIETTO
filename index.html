@@ -2,21 +2,23 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>¿Quieres ser mi san valentin?</title>
+  <title>¿Quieres ser mi San Valentín?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Música de fondo -->
-  <audio id="bgMusic" src="audio/musica.mp3" loop></audio>
+  <!-- Músicas de fondo -->
+  <audio id="musicIntro" src="audio/musica_intro.mp3" loop></audio>
+  <audio id="musicLove" src="audio/musica_love.mp3" loop></audio>
+  <audio id="musicFinal" src="audio/musica_final.mp3" loop></audio>
   <button id="musicToggle" class="music-btn">🔊 Música</button>
 
   <!-- Pantalla de introducción -->
   <div class="intro-screen" id="introScreen">
     <div class="intro-overlay"></div>
     <div class="intro-content">
-      <h1>¿Quieres ser mi San Valentin?</h1>
+      <h1>¿Quieres ser mi San Valentín?</h1>
       <p>
         Preparé un pequeño universo solo para ti, con recuerdos, palabras
         y un guía muy especial: yo en versión muñequito.
@@ -27,23 +29,25 @@
     </div>
   </div>
 
-  <!-- Sección del avatar / guía -->
+  <!-- Contenido principal -->
   <main class="main-wrapper" id="mainWrapper">
+
+    <!-- Avatar / guía -->
     <section class="avatar-section">
       <div class="avatar-card">
         <div class="avatar-photo">
-          <!-- Aquí va TU foto -->
+          <!-- Tu foto -->
           <img src="img/avatar.jpg" alt="Mi avatar" class="avatar-img">
         </div>
         <div class="avatar-dialog" id="avatarDialog">
-          Hola, soy tu San Vale8k personal.  
-          Prometo guiarte por todo este regalo que hice solo para ti. 💖
+          Hola, soy tu guía personal de San Valentín.  
+          Prometo acompañarte en cada parte de este regalo que hice solo para ti. 💖
         </div>
       </div>
     </section>
 
-    <!-- Primera sección de contenido -->
-    <section class="section section-soft">
+    <!-- Sección 1 -->
+    <section class="section section-soft" id="seccionCalma">
       <h2>Primer paso: respira...</h2>
       <p>
         Antes de seguir, solo quiero que sepas que cada detalle aquí
@@ -52,14 +56,34 @@
       </p>
     </section>
 
-    <!-- Segunda sección: más adelante le metemos fotos, textos, etc. -->
-    <section class="section section-dark">
+    <!-- Sección 2: sentimientos (aquí irá música love) -->
+    <section class="section section-dark" id="seccionLove">
       <h2>Lo que siento por ti</h2>
       <p>
-        Aquí después podemos poner fotos, una línea del tiempo, razones,
-        o incluso un mini juego de decisiones. Hoy empezamos por el corazón:
-        tú, yo, y este muñequito que te habla.
+        Aquí después podemos poner fotos, una línea del tiempo, razones
+        o incluso un mini juego de decisiones. Pero lo más importante
+        es que sepas que cada día que pasa, te pienso más de lo que digo.
       </p>
+    </section>
+
+    <!-- Sección 3: final (música final) -->
+    <section class="section section-soft" id="seccionFinal">
+      <h2>La pregunta importante</h2>
+      <p>
+        Después de todo este recorrido, solo me queda hacerte una pregunta
+        clara y directa:
+      </p>
+
+      <div class="final-buttons">
+        <button class="btn-final btn-si" id="btnSi">
+          Sí, quiero ser tu San Valentín ❤️
+        </button>
+        <button class="btn-final btn-pensar" id="btnPensar">
+          Tengo que pensarlo (pero ya sabes la respuesta) 😏
+        </button>
+      </div>
+
+      <p class="final-msg" id="finalMsg"></p>
     </section>
 
   </main>
