@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¿Quieres ser mi san valentin?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Música de fondo -->
+  <audio id="bgMusic" src="audio/musica.mp3" loop></audio>
+  <button id="musicToggle" class="music-btn">🔊 Música</button>
+
+  <!-- Pantalla de introducción -->
+  <div class="intro-screen" id="introScreen">
+    <div class="intro-overlay"></div>
+    <div class="intro-content">
+      <h1>¿Quieres ser mi San Vale8k?</h1>
+      <p>
+        Preparé un pequeño universo solo para ti, con recuerdos, palabras
+        y un guía muy especial: yo en versión muñequito.
+      </p>
+      <button id="btnEntrar" class="btn-primary">
+        Entrar al universo 💗
+      </button>
+    </div>
+  </div>
+
+  <!-- Sección del avatar / guía -->
+  <main class="main-wrapper" id="mainWrapper">
+    <section class="avatar-section">
+      <div class="avatar-card">
+        <div class="avatar-photo">
+          <!-- Aquí va TU foto -->
+          <img src="img/avatar.jpg" alt="Mi avatar" class="avatar-img">
+        </div>
+        <div class="avatar-dialog" id="avatarDialog">
+          Hola, soy tu San Vale8k personal.  
+          Prometo guiarte por todo este regalo que hice solo para ti. 💖
+        </div>
+      </div>
+    </section>
+
+    <!-- Primera sección de contenido -->
+    <section class="section section-soft">
+      <h2>Primer paso: respira...</h2>
+      <p>
+        Antes de seguir, solo quiero que sepas que cada detalle aquí
+        está pensado en ti. No es una página cualquiera, es nuestra
+        pequeña historia en versión código.
+      </p>
+    </section>
+
+    <!-- Segunda sección: más adelante le metemos fotos, textos, etc. -->
+    <section class="section section-dark">
+      <h2>Lo que siento por ti</h2>
+      <p>
+        Aquí después podemos poner fotos, una línea del tiempo, razones,
+        o incluso un mini juego de decisiones. Hoy empezamos por el corazón:
+        tú, yo, y este muñequito que te habla.
+      </p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
