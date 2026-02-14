@@ -1066,3 +1066,44 @@ body{
     height:min(92vw,300px)
   }
 }
+/* ❌ ELIMINAR BARRA SCROLL CARRIL */
+.viaje-contenido, .recuerdo-flotante, .recuerdo-marco {
+  overflow: hidden !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+.viaje-contenido::-webkit-scrollbar,
+.recuerdo-flotante::-webkit-scrollbar,
+.recuerdo-marco::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+/* 🌍 4 HOLOGRAMAS ORBITA 25s - PEGAR AL FINAL */
+.holo-orbita {
+  width: 135px !important; height: 135px !important;
+  filter: drop-shadow(0 0 40px rgba(0,255,255,0.95));
+}
+.holo-marco {
+  width: 100%; height: 105px; border-radius: 22px; overflow: hidden;
+  background: rgba(0,255,255,0.2); border: 2px solid rgba(0,255,255,0.8);
+  backdrop-filter: blur(30px); position: relative;
+  box-shadow: 0 0 60px rgba(0,255,255,0.6);
+}
+.holo-marco img, .holo-marco video { width: 100%; height: 100%; object-fit: cover; }
+.holo-texto-mini {
+  position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+  font-size: 0.8rem; color: #00ffff; text-shadow: 0 0 15px #00ffff;
+  font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600;
+}
+@keyframes orbitaHoloGrande {
+  0% { transform: translate(-50%,-50%) rotateZ(0deg) translateX(270px) rotateZ(0deg) scale(0.75); opacity: 0.3; }
+  6% { opacity: 1; }
+  50% { transform: translate(-50%,-50%) rotateZ(180deg) translateX(270px) rotateZ(-180deg) scale(1.05); opacity: 1; }
+  94% { opacity: 1; }
+  100% { transform: translate(-50%,-50%) rotateZ(360deg) translateX(270px) rotateZ(-360deg) scale(0.75); opacity: 0.3; }
+}
+@keyframes holoPulso {
+  0% { filter: drop-shadow(0 0 35px rgba(0,255,255,0.8)); transform: scale(1); }
+  100% { filter: drop-shadow(0 0 65px rgba(0,255,255,1.2)); transform: scale(1.12); }
+}
