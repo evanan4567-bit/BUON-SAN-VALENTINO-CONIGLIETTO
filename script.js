@@ -775,7 +775,7 @@ document.addEventListener('DOMContentLoaded', function () {
       cierreFase3.style.display='flex';
       construirMundo3D();
       iniciarHologramaMundo();
-      setTimeout(mostrarFase4,10000);
+      setTimeout(mostrarFase4,280000);
     },1300);
   }
 
@@ -826,31 +826,45 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  function iniciarHologramaMundo(){
-    if(!holoMedia || !holoTexto) return;
+// PEGAR después de iniciarHologramaMundo()
+function crearHologramasOrbitantes() {
+  const esfera = document.querySelector('.mundo-esfera');
+  if (!esfera || window.mundoHologramasActivos) return;
+  window.mundoHologramasActivos = true;
+  
+  const RECUERDOS_HOLO = [
+    { src: 'img/comienzo.jpg', tipo: 'img', texto: 'Nuestro comienzo ♾️', delay: 0 },
+    { src: 'img/ojos_ella.jpg', tipo: 'img', texto: 'Tus ojos siempre 🌟', delay: 1.5 },
+    { src: 'img/abrazo_comida.jpg', tipo: 'img', texto: 'Abrazo + corazón ❤️', delay: 3.0 },
+    { src: 'video/primer_imprevisto.mp4', tipo: 'video', texto: 'Primer video 🎥', delay: 4.5 }
+  ];
 
-    const RECUERDOS_MUNDO = [
-      {
-        src: 'img/anillos_promesa.jpg',
-        tipo: 'img',
-        texto: 'Nuestros anillos, nuestro sí silencioso al “para siempre”.'
-      },
-      {
-        src: 'img/picnic_noche.jpg',
-        tipo: 'img',
-        texto: 'Nuestro picnic de noche, prometiéndonos no soltarnos nunca.'
-      },
-      {
-        src: 'img/ano_nuevo.jpg',
-        tipo: 'img',
-        texto: 'Año Nuevo Contigo, soñando muchos años más a tu lado.'
-      },
-      {
-        src: 'img/primera_navidad.jpg',
-        tipo: 'img',
-        texto: 'Nuestra primera Navidad, el inicio de todas las que quiero contigo.'
-      }
-    ];
+  RECUERDOS_HOLO.forEach((recuerdo, i) => {
+    const holo = document.createElement('div');
+    holo.className = `holo-orbita holo-${i}`;
+    holo.innerHTML = `
+      <div class="holo-marco">
+        ${recuerdo.tipo === 'img' ? `<img src="${recuerdo.src}" alt="${recuerdo.texto}">` : `<video src="${recuerdo.src}" muted loop playsinline autoplay></video>`}
+        <div class="holo-texto-mini">${recuerdo.texto}</div>
+      </div>
+    `;
+    
+    const angulo = (i / 4) * Math.PI * 2;
+    const x = Math.cos(angulo) * 270;
+    const y = Math.sin(angulo) * 190;
+    
+    holo.style.cssText = `
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%) translate3d(${x}px, ${y}px, ${Math.sin(angulo) * 60}px);
+      animation: orbitaHoloGrande 28s linear infinite, holoPulso 3s ease-in-out infinite alternate;
+      animation-delay: ${recuerdo.delay}s;
+    `;
+    esfera.appendChild(holo);
+  });
+}
+
+setTimeout(crearHologramasOrbitantes, 1000);
+
 
     let idx = 0;
 
