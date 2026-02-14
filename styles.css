@@ -1,3 +1,7 @@
+/* ------------------------ */
+/* Reset básico             */
+/* ------------------------ */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +16,10 @@ body {
   overflow-x: hidden;
 }
 
-/* Botón de música */
+/* ------------------------ */
+/* Botón de música          */
+/* ------------------------ */
+
 .music-btn {
   position: fixed;
   top: 1rem;
@@ -28,7 +35,9 @@ body {
   backdrop-filter: blur(6px);
 }
 
+/* ------------------------ */
 /* Pantalla de introducción */
+/* ------------------------ */
 
 .intro-screen {
   position: fixed;
@@ -88,7 +97,9 @@ body {
   filter: brightness(1.05);
 }
 
-/* Contenido principal */
+/* ------------------------ */
+/* Contenido principal      */
+/* ------------------------ */
 
 .main-wrapper {
   opacity: 0;
@@ -104,7 +115,9 @@ body {
   pointer-events: auto;
 }
 
-/* Avatar */
+/* ------------------------ */
+/* Avatar / guía            */
+/* ------------------------ */
 
 .avatar-section {
   display: flex;
@@ -113,13 +126,15 @@ body {
 }
 
 .avatar-card {
-  background: rgba(5, 5, 20, 0.85);
+  background: rgba(5, 5, 20, 0.75);
   border-radius: 24px;
   padding: 1.3rem 1.5rem;
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   animation: floaty 4s ease-in-out infinite;
 }
 
@@ -147,7 +162,9 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* Secciones */
+/* ------------------------ */
+/* Secciones generales      */
+/* ------------------------ */
 
 .section {
   margin-top: 2rem;
@@ -174,7 +191,9 @@ body {
   line-height: 1.6;
 }
 
-/* Sección espacio básica */
+/* ------------------------ */
+/* Sección espacio (botón)  */
+/* ------------------------ */
 
 .section-espacio {
   background: radial-gradient(circle at center, #050816, #02030b 70%, #000 100%);
@@ -183,7 +202,13 @@ body {
   overflow: hidden;
 }
 
-/* Botones finales */
+.section-espacio p {
+  opacity: 0.95;
+}
+
+/* ------------------------ */
+/* Botones finales          */
+/* ------------------------ */
 
 .final-buttons {
   display: flex;
@@ -226,7 +251,9 @@ body {
   line-height: 1.5;
 }
 
-/* Overlay de viaje espacial */
+/* ------------------------ */
+/* Overlay de viaje espacial*/
+/* ------------------------ */
 
 .viaje-overlay {
   position: fixed;
@@ -263,7 +290,7 @@ body {
 .viaje-contenido {
   position: relative;
   z-index: 1;
-  width: min(900px, 100%);
+  width: min(1000px, 100%);
   padding: 1.5rem;
   text-align: center;
 }
@@ -310,16 +337,16 @@ body {
   animation: llama-parpadeo 0.5s ease-in-out infinite;
 }
 
-/* Carril de recuerdos */
+/* Carril de recuerdos (GRANDE) */
 
 .viaje-carril {
   margin: 1.5rem auto 1rem;
-  width: min(900px, 100%);
-  height: 260px;
+  width: min(1000px, 100%);
+  height: 360px;
   overflow: hidden;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
   background: radial-gradient(circle at center, #050816, #02030b 70%, #000 100%);
   display: flex;
 }
@@ -333,19 +360,13 @@ body {
   justify-content: center;
 }
 
-.viaje-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+.viaje-item img,
 .viaje-item video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-
 
 .viaje-item span {
   position: absolute;
@@ -356,6 +377,8 @@ body {
   font-size: 0.95rem;
   background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
 }
+
+/* Cartas de texto dentro del viaje */
 
 .viaje-card {
   width: 100%;
@@ -369,12 +392,15 @@ body {
   background: radial-gradient(circle at center, rgba(255,255,255,0.08), rgba(0,0,0,0.95));
 }
 
-/* Texto del viaje */
+/* Texto inferior del viaje */
+
 .viaje-texto {
   font-size: 0.98rem;
   margin-top: 0.5rem;
   margin-bottom: 0.8rem;
 }
+
+/* Botón salir viaje */
 
 .btn-salir-viaje {
   border: none;
@@ -386,7 +412,9 @@ body {
   font-size: 0.92rem;
 }
 
-/* Animaciones */
+/* ------------------------ */
+/* Animaciones              */
+/* ------------------------ */
 
 @keyframes glow {
   0% {
@@ -420,18 +448,22 @@ body {
   100% { transform: scaleY(1); opacity: 1; }
 }
 
-/* Estado oculto */
+/* ------------------------ */
+/* Estado oculto / responsive */
+/* ------------------------ */
 
 .hidden {
   opacity: 0;
   pointer-events: none;
 }
 
-/* Responsive */
-
 @media (max-width: 600px) {
   .avatar-card {
     flex-direction: row;
     align-items: flex-start;
+  }
+
+  .viaje-carril {
+    height: 260px;
   }
 }
