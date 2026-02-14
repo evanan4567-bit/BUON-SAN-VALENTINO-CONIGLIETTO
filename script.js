@@ -775,7 +775,7 @@ document.addEventListener('DOMContentLoaded', function () {
       cierreFase3.style.display='flex';
       construirMundo3D();
       iniciarHologramaMundo();
-      setTimeout(mostrarFase4,10000);
+      setTimeout(mostrarFase4,28000);
     },1300);
   }
 
