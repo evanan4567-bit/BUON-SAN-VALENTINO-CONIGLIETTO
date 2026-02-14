@@ -1,271 +1,271 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>💕 ¿Quieres ser mi San Valentín? 💕</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<title>💕 ¿Quieres ser mi San Valentín? 💕</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <audio id="musicIntro" src="audio/musica_intro.mp3" loop></audio>
-  <audio id="musicLove" src="audio/musica_love.mp3" loop></audio>
-  <audio id="musicFinal" src="audio/musica_final.mp3" loop></audio>
+<audio id="musicIntro" src="audio/musica_intro.mp3" loop></audio>
+<audio id="musicLove" src="audio/musica_love.mp3" loop></audio>
+<audio id="musicFinal" src="audio/musica_final.mp3" loop></audio>
 
-  <button id="musicToggle" class="music-btn" aria-label="Música">
-    <div class="music-bars"><span></span><span></span><span></span><span></span><span></span></div>
-    <span class="music-label">Música</span>
-  </button>
+<button id="musicToggle" class="music-btn" aria-label="Música">
+<div class="music-bars"><span></span><span></span><span></span><span></span><span></span></div>
+<span class="music-label">Música</span>
+</button>
 
-  <canvas id="bgCanvas"></canvas>
+<canvas id="bgCanvas"></canvas>
 
-  <!-- INTRO -->
-  <div class="intro-screen" id="introScreen">
-    <div class="intro-overlay"></div>
-    <div class="intro-estrellas-fugaces">
-      <div class="estrella-fugaz"></div>
-      <div class="estrella-fugaz ef-2"></div>
-      <div class="estrella-fugaz ef-3"></div>
-    </div>
-    <div class="intro-content">
-      <div class="intro-corazon-anim">
-        <svg viewBox="0 0 512 512" class="intro-svg-heart">
-          <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 52.9-154.3-9.8-207.9z" fill="url(#introHeartGrad)"/>
-          <defs>
-            <linearGradient id="introHeartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#ff6b9d"/>
-              <stop offset="50%" style="stop-color:#ff1493"/>
-              <stop offset="100%" style="stop-color:#ff69b4"/>
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-      <p class="intro-pretitulo">Hice algo especial para ti...</p>
-      <h1 class="intro-titulo">¿Quieres ser mi<br>San Valentín?</h1>
-      <p class="intro-descripcion">
-        Preparé un pequeño universo solo para ti, con recuerdos, palabras
-        y un guía muy especial: yo en versión muñequito.
-        <br><br><em>Pon tus audífonos, sube el volumen y déjate llevar. 🎧</em>
-      </p>
-      <button id="btnEntrar" class="btn-primary btn-entrar">
-        <span class="btn-brillo"></span>Entrar al universo 💗
-      </button>
-      <p class="intro-fecha">14 de febrero, 2026</p>
-    </div>
-  </div>
+<!-- INTRO -->
+<div class="intro-screen" id="introScreen">
+<div class="intro-overlay"></div>
+<div class="intro-estrellas-fugaces">
+<div class="estrella-fugaz"></div>
+<div class="estrella-fugaz ef-2"></div>
+<div class="estrella-fugaz ef-3"></div>
+</div>
+<div class="intro-content">
+<div class="intro-corazon-anim">
+<svg viewBox="0 0 512 512" class="intro-svg-heart">
+<path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 52.9-154.3-9.8-207.9z" fill="url(#introHeartGrad)"/>
+<defs>
+<linearGradient id="introHeartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#ff6b9d"/>
+<stop offset="50%" style="stop-color:#ff1493"/>
+<stop offset="100%" style="stop-color:#ff69b4"/>
+</linearGradient>
+</defs>
+</svg>
+</div>
+<p class="intro-pretitulo">Hice algo especial para ti...</p>
+<h1 class="intro-titulo">¿Quieres ser mi<br>San Valentín?</h1>
+<p class="intro-descripcion">
+Preparé un pequeño universo solo para ti, con recuerdos, palabras
+y un guía muy especial: yo en versión muñequito.
+<br><br><em>Pon tus audífonos, sube el volumen y déjate llevar. 🎧</em>
+</p>
+<button id="btnEntrar" class="btn-primary btn-entrar">
+<span class="btn-brillo"></span>Entrar al universo 💗
+</button>
+<p class="intro-fecha">14 de febrero, 2026</p>
+</div>
+</div>
 
-  <!-- MAIN -->
-  <main class="main-wrapper" id="mainWrapper">
-    <section class="avatar-section">
-      <div class="avatar-card">
-        <div class="avatar-photo">
-          <img src="img/avatar.jpg" alt="Mi avatar" class="avatar-img">
-          <div class="avatar-anillo"></div>
-        </div>
-        <div class="avatar-dialog-wrapper">
-          <div class="avatar-nombre">Tu Guía Personal 💫</div>
-          <div class="avatar-dialog" id="avatarDialog">
-            Hola, soy tu guía personal de San Valentín.
-            Prometo acompañarte en cada parte de este regalo que hice solo para ti. 💖
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- MAIN -->
+<main class="main-wrapper" id="mainWrapper">
+<section class="avatar-section">
+<div class="avatar-card">
+<div class="avatar-photo">
+<img src="img/avatar.jpg" alt="Mi avatar" class="avatar-img">
+<div class="avatar-anillo"></div>
+</div>
+<div class="avatar-dialog-wrapper">
+<div class="avatar-nombre">Tu Guía Personal 💫</div>
+<div class="avatar-dialog" id="avatarDialog">
+Hola, soy tu guía personal de San Valentín.
+Prometo acompañarte en cada parte de este regalo que hice solo para ti. 💖
+</div>
+</div>
+</div>
+</section>
 
-    <section class="section section-soft seccion-entrada" id="seccionCalma">
-      <div class="seccion-icono">🌸</div>
-      <h2>Primer paso: respira...</h2>
-      <div class="linea-decorativa"></div>
-      <p>Antes de seguir, solo quiero que sepas que cada detalle aquí está pensado en ti. No es una página cualquiera, es nuestra pequeña historia en versión código.</p>
-      <p class="texto-secundario">Cada línea, cada color, cada animación... todo tiene un pedacito de lo que siento por ti. ✨</p>
-    </section>
+<section class="section section-soft seccion-entrada" id="seccionCalma">
+<div class="seccion-icono">🌸</div>
+<h2>Primer paso: respira...</h2>
+<div class="linea-decorativa"></div>
+<p>Antes de seguir, solo quiero que sepas que cada detalle aquí está pensado en ti. No es una página cualquiera, es nuestra pequeña historia en versión código.</p>
+<p class="texto-secundario">Cada línea, cada color, cada animación... todo tiene un pedacito de lo que siento por ti. ✨</p>
+</section>
 
-    <section class="section section-espacio seccion-entrada" id="seccionLove">
-      <div class="espacio-nebulosa"></div>
-      <div class="espacio-contenido">
-        <div class="seccion-icono">🚀</div>
-        <h2>Viaje espacial por nuestros recuerdos</h2>
-        <div class="linea-decorativa"></div>
-        <p>Cuando pulses este botón, todo se apagará un momento y empezará un viaje espacial a través de nuestros recuerdos, mientras suena una canción que para mí nos queda perfecta.</p>
-        <p class="texto-secundario">🎵 Los Panchos — <em>Contigo</em> 🎵</p>
-        <button class="btn-primary btn-viajar" id="btnViajar">
-          <span class="btn-brillo"></span>
-          <span class="btn-icono-cohete">🚀</span>
-          Iniciar viaje espacial Contigo
-        </button>
-      </div>
-    </section>
+<section class="section section-espacio seccion-entrada" id="seccionLove">
+<div class="espacio-nebulosa"></div>
+<div class="espacio-contenido">
+<div class="seccion-icono">🚀</div>
+<h2>Viaje espacial por nuestros recuerdos</h2>
+<div class="linea-decorativa"></div>
+<p>Cuando pulses este botón, todo se apagará un momento y empezará un viaje espacial a través de nuestros recuerdos, mientras suena una canción que para mí nos queda perfecta.</p>
+<p class="texto-secundario">🎵 Los Panchos — <em>Contigo</em> 🎵</p>
+<button class="btn-primary btn-viajar" id="btnViajar">
+<span class="btn-brillo"></span>
+<span class="btn-icono-cohete">🚀</span>
+Iniciar viaje espacial Contigo
+</button>
+</div>
+</section>
 
-    <section class="section section-pregunta seccion-entrada" id="seccionFinal">
-      <div class="pregunta-estrellas"></div>
-      <div class="seccion-icono">💝</div>
-      <h2>La pregunta importante</h2>
-      <div class="linea-decorativa"></div>
-      <p>Después de todo este recorrido, solo me queda hacerte una pregunta clara y directa:</p>
-      <div class="pregunta-destacada">
-        <p>¿Quieres seguir siendo mi persona favorita en este universo? 🌌</p>
-      </div>
-      <div class="final-buttons">
-        <button class="btn-final btn-si" id="btnSi">
-          <span class="btn-brillo"></span>
-          Sí, quiero ser tu San Valentín ❤️
-        </button>
-        <button class="btn-final btn-pensar" id="btnPensar">
-          Tengo que pensarlo (pero ya sabes la respuesta) 😏
-        </button>
-      </div>
-      <p class="final-msg" id="finalMsg"></p>
-    </section>
-  </main>
+<section class="section section-pregunta seccion-entrada" id="seccionFinal">
+<div class="pregunta-estrellas"></div>
+<div class="seccion-icono">💝</div>
+<h2>La pregunta importante</h2>
+<div class="linea-decorativa"></div>
+<p>Después de todo este recorrido, solo me queda hacerte una pregunta clara y directa:</p>
+<div class="pregunta-destacada">
+<p>¿Quieres seguir siendo mi persona favorita en este universo? 🌌</p>
+</div>
+<div class="final-buttons">
+<button class="btn-final btn-si" id="btnSi">
+<span class="btn-brillo"></span>
+Sí, quiero ser tu San Valentín ❤️
+</button>
+<button class="btn-final btn-pensar" id="btnPensar">
+Tengo que pensarlo (pero ya sabes la respuesta) 😏
+</button>
+</div>
+<p class="final-msg" id="finalMsg"></p>
+</section>
+</main>
 
-  <!-- VIAJE WARP -->
-  <div class="viaje-overlay" id="viajeOverlay">
-    <canvas id="warpCanvas"></canvas>
-    <div class="viaje-nebulosa"></div>
-    <div class="viaje-contenido">
-      <div class="nave-wrapper">
-        <div class="nave">
-          <div class="nave-cuerpo"></div>
-          <div class="nave-llama"></div>
-        </div>
-      </div>
-      <p class="viaje-texto" id="viajeTexto">Viajando por un universo lleno de momentos Contigo...</p>
-      <div class="viaje-hud">
-        <!-- Indicador oculto para que no tape los mensajes -->
-        <div class="viaje-indicador" style="display:none;">
-          <span id="viajeContador">1</span> / <span id="viajeTotal">21</span>
-        </div>
-        <div class="viaje-barra-progreso">
-          <div class="viaje-barra-fill" id="viajeBarraFill"></div>
-        </div>
-      </div>
-      <button class="btn-salir-viaje" id="btnSalirViaje">Terminar viaje ✨</button>
-    </div>
+<!-- VIAJE WARP -->
+<div class="viaje-overlay" id="viajeOverlay">
+<canvas id="warpCanvas"></canvas>
+<div class="viaje-nebulosa"></div>
+<div class="viaje-contenido">
+<div class="nave-wrapper">
+<div class="nave">
+<div class="nave-cuerpo"></div>
+<div class="nave-llama"></div>
+</div>
+</div>
+<p class="viaje-texto" id="viajeTexto">Viajando por un universo lleno de momentos Contigo...</p>
+<div class="viaje-hud">
+<!-- Indicador oculto para que no tape los mensajes -->
+<div class="viaje-indicador" style="display:none;">
+<span id="viajeContador">1</span> / <span id="viajeTotal">21</span>
+</div>
+<div class="viaje-barra-progreso">
+<div class="viaje-barra-fill" id="viajeBarraFill"></div>
+</div>
+</div>
+<button class="btn-salir-viaje" id="btnSalirViaje">Terminar viaje ✨</button>
+</div>
 
-    <!-- Carril oculto de recuerdos -->
-    <div style="display:none;" id="viajeCarril">
-      <div class="viaje-item foto"><img src="img/comienzo.jpg" alt="Nuestro comienzo"><span>Nuestro comienzo, donde todo empezó sin que lo imagináramos.</span></div>
-      <div class="viaje-item foto"><img src="img/ojos_ella.jpg" alt="Sus ojos"><span>Tus ojos, el lugar donde siempre termino perdiéndome.</span></div>
-      <div class="viaje-item foto"><img src="img/abrazo_comida.jpg" alt="Abrazo y comida"><span>Nosotros abrazados, la mesa llena y el corazón también.</span></div>
-      <div class="viaje-item video"><video src="video/primer_imprevisto.mp4" muted loop playsinline></video><span>El primer video que grabamos cuando te dije que salgas sin avisar.</span></div>
-      <div class="viaje-item foto"><img src="img/manos.jpg" alt="Nuestras manos"><span>Nuestras manos, como promesa silenciosa de no soltarnos.</span></div>
-      <div class="viaje-item foto"><img src="img/dibujo_para_ella.jpg" alt="Dibujo para ti"><span>Un dibujo hecho pensando solo en ti.</span></div>
-      <div class="viaje-item foto"><img src="img/ojos_juntos.jpg" alt="Nuestros ojos juntos"><span>Nuestros ojos juntos, como si el mundo fuera solo este cuadrito.</span></div>
-      <div class="viaje-item video"><video src="video/pintar_trend.mp4" muted loop playsinline></video><span>Aquel día que fuimos a pintar e hicimos un trend que nunca olvidaré.</span></div>
-      <div class="viaje-item video"><video src="video/enfocandote.mp4" muted loop playsinline></video><span>Primero yo grabando, y luego enfocándote a ti, como siempre termino haciendo.</span></div>
-      <div class="viaje-item foto"><img src="img/cena_incompleta.jpg" alt="La cena que no terminamos"><span>La cena que no pudimos acabar, pero que se quedó completa en mi memoria.</span></div>
-      <div class="viaje-item foto"><img src="img/primera_navidad.jpg" alt="Nuestra primera Navidad"><span>Nuestra primera Navidad juntos, luces, amor y el comienzo de nuevas tradiciones.</span></div>
-      <div class="viaje-item video"><video src="video/trend_24diciembre.mp4" muted loop playsinline></video><span>Mi 24 de diciembre Contigo, haciendo trends con todo el corazón en Noche Buena.</span></div>
-      <div class="viaje-item foto"><img src="img/ano_nuevo.jpg" alt="Año Nuevo juntos"><span>Año Nuevo Contigo, brindando por todos los que vendrán a tu lado.</span></div>
-      <div class="viaje-item foto"><img src="img/catedral.jpg" alt="Frente a la Catedral"><span>Frente a la Catedral, como si el mundo entero fuera testigo de nosotros.</span></div>
-      <div class="viaje-item video"><video src="video/curame_cargando.mp4" muted loop playsinline></video><span>Te cargué y te hice dar vueltas con el trend "Cúrame", puro amor en movimiento.</span></div>
-      <div class="viaje-item foto"><img src="img/manos_cumple.jpg" alt="Manos en mi cumpleaños"><span>Mis manos en mi cumpleaños, tu pulsera, las rosas, y tú haciéndolo especial.</span></div>
-      <div class="viaje-item foto"><img src="img/chaleco_casco.jpg" alt="Noche especial"><span>La noche más mágica que tuve en mi facultad por tenerte a mi lado.</span></div>
-      <div class="viaje-item foto"><img src="img/anillos_promesa.jpg" alt="Nuestros anillos"><span>Nuestras manos con los anillos de promesa, nuestro sí silencioso al futuro.</span></div>
-      <div class="viaje-item video"><video src="video/sus_piernas.mp4" muted loop playsinline></video><span>En tus piernas mientras grababa, todo era perfecto, todo era bello.</span></div>
-      <div class="viaje-item video"><video src="video/pista_echados.mp4" muted loop playsinline></video><span>Cuando nos fuimos a echar en la pista, tú y yo contra el mundo.</span></div>
-      <div class="viaje-item foto"><img src="img/picnic_noche.jpg" alt="Picnic de noche"><span>El picnic de noche Contigo, estrellas arriba, amor por todos lados.</span></div>
-    </div>
-  </div>
+<!-- Carril oculto de recuerdos -->
+<div style="display:none;" id="viajeCarril">
+<div class="viaje-item foto"><img src="img/comienzo.jpg" alt="Nuestro comienzo"><span>Nuestro comienzo, donde todo empezó sin que lo imagináramos.</span></div>
+<div class="viaje-item foto"><img src="img/ojos_ella.jpg" alt="Sus ojos"><span>Tus ojos, el lugar donde siempre termino perdiéndome.</span></div>
+<div class="viaje-item foto"><img src="img/abrazo_comida.jpg" alt="Abrazo y comida"><span>Nosotros abrazados, la mesa llena y el corazón también.</span></div>
+<div class="viaje-item video"><video src="video/primer_imprevisto.mp4" muted loop playsinline></video><span>El primer video que grabamos cuando te dije que salgas sin avisar.</span></div>
+<div class="viaje-item foto"><img src="img/manos.jpg" alt="Nuestras manos"><span>Nuestras manos, como promesa silenciosa de no soltarnos.</span></div>
+<div class="viaje-item foto"><img src="img/dibujo_para_ella.jpg" alt="Dibujo para ti"><span>Un dibujo hecho pensando solo en ti.</span></div>
+<div class="viaje-item foto"><img src="img/ojos_juntos.jpg" alt="Nuestros ojos juntos"><span>Nuestros ojos juntos, como si el mundo fuera solo este cuadrito.</span></div>
+<div class="viaje-item video"><video src="video/pintar_trend.mp4" muted loop playsinline></video><span>Aquel día que fuimos a pintar e hicimos un trend que nunca olvidaré.</span></div>
+<div class="viaje-item video"><video src="video/enfocandote.mp4" muted loop playsinline></video><span>Primero yo grabando, y luego enfocándote a ti, como siempre termino haciendo.</span></div>
+<div class="viaje-item foto"><img src="img/cena_incompleta.jpg" alt="La cena que no terminamos"><span>La cena que no pudimos acabar, pero que se quedó completa en mi memoria.</span></div>
+<div class="viaje-item foto"><img src="img/primera_navidad.jpg" alt="Nuestra primera Navidad"><span>Nuestra primera Navidad juntos, luces, amor y el comienzo de nuevas tradiciones.</span></div>
+<div class="viaje-item video"><video src="video/trend_24diciembre.mp4" muted loop playsinline></video><span>Mi 24 de diciembre Contigo, haciendo trends con todo el corazón en Noche Buena.</span></div>
+<div class="viaje-item foto"><img src="img/ano_nuevo.jpg" alt="Año Nuevo juntos"><span>Año Nuevo Contigo, brindando por todos los que vendrán a tu lado.</span></div>
+<div class="viaje-item foto"><img src="img/catedral.jpg" alt="Frente a la Catedral"><span>Frente a la Catedral, como si el mundo entero fuera testigo de nosotros.</span></div>
+<div class="viaje-item video"><video src="video/curame_cargando.mp4" muted loop playsinline></video><span>Te cargué y te hice dar vueltas con el trend "Cúrame", puro amor en movimiento.</span></div>
+<div class="viaje-item foto"><img src="img/manos_cumple.jpg" alt="Manos en mi cumpleaños"><span>Mis manos en mi cumpleaños, tu pulsera, las rosas, y tú haciéndolo especial.</span></div>
+<div class="viaje-item foto"><img src="img/chaleco_casco.jpg" alt="Noche especial"><span>La noche más mágica que tuve en mi facultad por tenerte a mi lado.</span></div>
+<div class="viaje-item foto"><img src="img/anillos_promesa.jpg" alt="Nuestros anillos"><span>Nuestras manos con los anillos de promesa, nuestro sí silencioso al futuro.</span></div>
+<div class="viaje-item video"><video src="video/sus_piernas.mp4" muted loop playsinline></video><span>En tus piernas mientras grababa, todo era perfecto, todo era bello.</span></div>
+<div class="viaje-item video"><video src="video/pista_echados.mp4" muted loop playsinline></video><span>Cuando nos fuimos a echar en la pista, tú y yo contra el mundo.</span></div>
+<div class="viaje-item foto"><img src="img/picnic_noche.jpg" alt="Picnic de noche"><span>El picnic de noche Contigo, estrellas arriba, amor por todos lados.</span></div>
+</div>
+</div>
 
-  <!-- CIERRE FINAL -->
-  <section class="cierre-final" id="cierreFinal" style="display:none;">
-    <canvas id="cierreCanvas"></canvas>
-    <div class="cierre-corazones" id="cierreCorazones"></div>
-    <div class="cierre-contenido">
+<!-- CIERRE FINAL -->
+<section class="cierre-final" id="cierreFinal" style="display:none;">
+<canvas id="cierreCanvas"></canvas>
+<div class="cierre-corazones" id="cierreCorazones"></div>
+<div class="cierre-contenido">
 
-      <!-- Fase 1: Sobre -->
-      <div class="cierre-fase fase-typewriter" id="cierreFase1">
-        <div class="cierre-sobre" id="cierreSobre">
-          <div class="sobre-tapa"></div>
-          <div class="sobre-cuerpo">
-            <div class="sobre-carta">💌</div>
-          </div>
-          <p class="sobre-instruccion">Toca el sobre...</p>
-        </div>
-      </div>
+<!-- Fase 1: Sobre -->
+<div class="cierre-fase fase-typewriter" id="cierreFase1">
+<div class="cierre-sobre" id="cierreSobre">
+<div class="sobre-tapa"></div>
+<div class="sobre-cuerpo">
+<div class="sobre-carta">💌</div>
+</div>
+<p class="sobre-instruccion">Toca el sobre...</p>
+</div>
+</div>
 
-      <!-- Fase 2: Carta -->
-      <div class="cierre-fase fase-carta" id="cierreFase2" style="display:none;">
-        <div class="carta-final">
-          <div class="carta-brillo"></div>
-          <h2 class="carta-titulo" id="cartaTitulo"></h2>
-          <div class="carta-separador">✦ ✦ ✦</div>
-          <p class="carta-cuerpo" id="cartaCuerpo"></p>
-          <div class="carta-firma" id="cartaFirma"></div>
-        </div>
-      </div>
+<!-- Fase 2: Carta -->
+<div class="cierre-fase fase-carta" id="cierreFase2" style="display:none;">
+<div class="carta-final">
+<div class="carta-brillo"></div>
+<h2 class="carta-titulo" id="cartaTitulo"></h2>
+<div class="carta-separador">✦ ✦ ✦</div>
+<p class="carta-cuerpo" id="cartaCuerpo"></p>
+<div class="carta-firma" id="cartaFirma"></div>
+</div>
+</div>
 
-      <!-- Fase 3: MUNDO 3D DEL AMOR -->
-      <div class="cierre-fase fase-mundo" id="cierreFase3" style="display:none;">
-        <h2 class="mundo-titulo">Nuestro Mundo 🌍💖</h2>
-        <p class="mundo-subtitulo">Todo lo que gira a nuestro alrededor es amor</p>
-        <div class="mundo-escena">
-          <div class="mundo-esfera" id="mundoEsfera"></div>
-          <div class="mundo-centro-glow"></div>
-        </div>
+<!-- Fase 3: MUNDO 3D DEL AMOR -->
+<div class="cierre-fase fase-mundo" id="cierreFase3" style="display:none;">
+<h2 class="mundo-titulo">Nuestro Mundo 🌍💖</h2>
+<p class="mundo-subtitulo">Todo lo que gira a nuestro alrededor es amor</p>
+<div class="mundo-escena">
+<div class="mundo-esfera" id="mundoEsfera"></div>
+<div class="mundo-centro-glow"></div>
+</div>
 
-        <!-- Holograma de recuerdos -->
-        <div class="mundo-holograma">
-          <div class="holo-base"></div>
-          <div class="holo-rayos"></div>
-          <div class="holo-contenido">
-            <div class="holo-media" id="holoMedia"></div>
-            <p class="holo-texto" id="holoTexto"></p>
-          </div>
-        </div>
-      </div>
+<!-- Holograma de recuerdos -->
+<div class="mundo-holograma">
+<div class="holo-base"></div>
+<div class="holo-rayos"></div>
+<div class="holo-contenido">
+<div class="holo-media" id="holoMedia"></div>
+<p class="holo-texto" id="holoTexto"></p>
+</div>
+</div>
+</div>
 
-      <!-- Fase 4: Promesas -->
-      <div class="cierre-fase fase-promesas" id="cierreFase4" style="display:none;">
-        <div class="corazon-grande" id="corazonGrande">
-          <div class="corazon-svg">
-            <svg viewBox="0 0 512 512" class="svg-corazon">
-              <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 52.9-154.3-9.8-207.9z" fill="url(#gradCorazon)"/>
-              <defs>
-                <linearGradient id="gradCorazon" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#ff6b9d"/>
-                  <stop offset="50%" style="stop-color:#ff1493"/>
-                  <stop offset="100%" style="stop-color:#ff69b4"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-        </div>
-        <div class="promesas-lista" id="promesasLista"></div>
-      </div>
+<!-- Fase 4: Promesas -->
+<div class="cierre-fase fase-promesas" id="cierreFase4" style="display:none;">
+<div class="corazon-grande" id="corazonGrande">
+<div class="corazon-svg">
+<svg viewBox="0 0 512 512" class="svg-corazon">
+<path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 52.9-154.3-9.8-207.9z" fill="url(#gradCorazon)"/>
+<defs>
+<linearGradient id="gradCorazon" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#ff6b9d"/>
+<stop offset="50%" style="stop-color:#ff1493"/>
+<stop offset="100%" style="stop-color:#ff69b4"/>
+</linearGradient>
+</defs>
+</svg>
+</div>
+</div>
+<div class="promesas-lista" id="promesasLista"></div>
+</div>
 
-      <!-- Fase 5: Te Amo + Contador -->
-      <div class="cierre-fase fase-final" id="cierreFase5" style="display:none;">
-        <div class="final-explosivo">
-          <div class="anillo-luz anillo-1"></div>
-          <div class="anillo-luz anillo-2"></div>
-          <div class="anillo-luz anillo-3"></div>
-          <h1 class="texto-final-grande" id="textoFinalGrande">Te Amo</h1>
-          <p class="texto-final-sub" id="textoFinalSub">
-            Hoy, mañana, siempre. En cada pelea que solucionamos, en cada abrazo que nos damos,
-            en cada silencio que entendemos... te elijo. Y te voy a seguir eligiendo hasta el final. 💕
-          </p>
-          <div class="contador-final" id="contadorFinal">
-            <div class="cont-item"><span id="cDias">0</span><small>días</small></div>
-            <div class="cont-item"><span id="cHoras">0</span><small>horas</small></div>
-            <div class="cont-item"><span id="cMins">0</span><small>minutos</small></div>
-            <div class="cont-item"><span id="cSegs">0</span><small>segundos</small></div>
-          </div>
-          <p class="contador-label">amándote sin parar ♾️</p>
-          <div class="firma-final">
-            <p>Hecho con todo mi corazón — San Valentín 2026</p>
-            <p class="musica-credito">🎵 Memories of Heaven — Jang Jung Woo</p>
-          </div>
-        </div>
-      </div>
+<!-- Fase 5: Te Amo + Contador -->
+<div class="cierre-fase fase-final" id="cierreFase5" style="display:none;">
+<div class="final-explosivo">
+<div class="anillo-luz anillo-1"></div>
+<div class="anillo-luz anillo-2"></div>
+<div class="anillo-luz anillo-3"></div>
+<h1 class="texto-final-grande" id="textoFinalGrande">Te Amo</h1>
+<p class="texto-final-sub" id="textoFinalSub">
+Hoy, mañana, siempre. En cada pelea que solucionamos, en cada abrazo que nos damos,
+en cada silencio que entendemos... te elijo. Y te voy a seguir eligiendo hasta el final. 💕
+</p>
+<div class="contador-final" id="contadorFinal">
+<div class="cont-item"><span id="cDias">0</span><small>días</small></div>
+<div class="cont-item"><span id="cHoras">0</span><small>horas</small></div>
+<div class="cont-item"><span id="cMins">0</span><small>minutos</small></div>
+<div class="cont-item"><span id="cSegs">0</span><small>segundos</small></div>
+</div>
+<p class="contador-label">amándote sin parar ♾️</p>
+<div class="firma-final">
+<p>Hecho con todo mi corazón — San Valentín 2026</p>
+<p class="musica-credito">🎵 Memories of Heaven — Jang Jung Woo</p>
+</div>
+</div>
+</div>
 
-    </div>
-  </section>
+</div>
+</section>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
