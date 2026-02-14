@@ -740,11 +740,14 @@ Te amo con cada parte de mi ser. Hasta el final. 💕`,
     }, 1200);
   });
 
-  // ─── FASE 2: Carta typewriter ───
+// ─── FASE 2: Carta typewriter (CORREGIDA) ───
   function typewriterCarta() {
     let i = 0;
+    // IMPORTANTE: Limpiar el contenido antes de empezar para evitar duplicados
     cartaTitulo.textContent = '';
     cartaCuerpo.textContent = '';
+    cartaFirma.textContent = '';
+    cartaFirma.style.opacity = '0';
 
     function escribirTitulo() {
       if (i < CARTA.titulo.length) {
@@ -759,18 +762,20 @@ Te amo con cada parte de mi ser. Hasta el final. 💕`,
 
     function escribirCuerpo() {
       if (i < CARTA.cuerpo.length) {
-        cartaCuerpo.textContent += CARTA.cuerpo[i];
+        // Usamos innerText para respetar los saltos de línea \n correctamente
+        cartaCuerpo.innerText = CARTA.cuerpo.substring(0, i + 1);
         i++;
-        // Más rápido en espacios y saltos de línea
-        const delay = (CARTA.cuerpo[i-1] === ' ' || CARTA.cuerpo[i-1] === '\n') ? 8 : 16;
+        
+        // Ajuste de velocidad: un poco más lento evita el glitch visual
+        const delay = (CARTA.cuerpo[i-1] === ' ' || CARTA.cuerpo[i-1] === '\n') ? 30 : 50;
         setTimeout(escribirCuerpo, delay);
       } else {
+        // Firma con efecto
         cartaFirma.textContent = CARTA.firma;
-        cartaFirma.style.opacity = '0';
         cartaFirma.style.animation = 'cierreFadeIn 1.2s ease forwards';
 
-        // Auto-avanzar a galería
-        setTimeout(mostrarFase3, 9000);
+        // Auto-avanzar a galería después de que termine de leer
+        setTimeout(mostrarFase3, 10000); 
       }
     }
 
