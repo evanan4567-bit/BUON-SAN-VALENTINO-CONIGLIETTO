@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   const DURACION_FOTO = 4000;   // 4 s para imágenes
-  const DURACION_VIDEO = 10000; // 10 s para videos
+  const DURACION_VIDEO = 12000; // 10 s para videos
 
   function programarSiguienteSlide() {
     if (!viajeItems.length) return;
