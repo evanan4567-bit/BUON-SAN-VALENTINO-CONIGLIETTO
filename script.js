@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
   ];
 
   const CARTA = {
-    titulo: 'Mi amor hermoso...',
+    titulo: 'Mi amor amorcito...',
     cuerpo: `Sé que no somos perfectos. Sé que hay días difíciles, peleas que duelen, silencios que pesan. Pero también sé algo que vale más que todo eso: que cada vez que nos caemos, nos levantamos juntos.
 
 Tú eres mi fuerza cuando no puedo más. Eres esa persona que me hace querer ser mejor cada día. No te elegí solo para los momentos bonitos, te elegí para TODO. Para las risas y las lágrimas, para las peleas y las reconciliaciones, para hoy y para siempre.
@@ -99,7 +99,7 @@ Tú eres mi fuerza cuando no puedo más. Eres esa persona que me hace querer ser
 Gracias por no rendirte conmigo. Gracias por amarme tal como soy. Gracias por ser mi hogar.
 
 Te amo con cada parte de mi ser. Hasta el final. 💕`,
-    firma: 'Tu enamorado, siempre ❤️'
+    firma: 'Tu ivanchis, siempre ❤️'
   };
 
   const PROMESAS = [
@@ -762,7 +762,7 @@ Te amo con cada parte de mi ser. Hasta el final. 💕`,
         cartaCuerpo.textContent += CARTA.cuerpo[i];
         i++;
         // Más rápido en espacios y saltos de línea
-        const delay = (CARTA.cuerpo[i-1] === ' ' || CARTA.cuerpo[i-1] === '\n') ? 10 : 22;
+        const delay = (CARTA.cuerpo[i-1] === ' ' || CARTA.cuerpo[i-1] === '\n') ? 8 : 16;
         setTimeout(escribirCuerpo, delay);
       } else {
         cartaFirma.textContent = CARTA.firma;
@@ -770,7 +770,7 @@ Te amo con cada parte de mi ser. Hasta el final. 💕`,
         cartaFirma.style.animation = 'cierreFadeIn 1.2s ease forwards';
 
         // Auto-avanzar a galería
-        setTimeout(mostrarFase3, 5000);
+        setTimeout(mostrarFase3, 9000);
       }
     }
 
