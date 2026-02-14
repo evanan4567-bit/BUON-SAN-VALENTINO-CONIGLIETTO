@@ -11,23 +11,18 @@
 </head>
 <body>
 
-  <!-- 🎵 MÚSICAS -->
   <audio id="musicIntro" src="audio/musica_intro.mp3" loop></audio>
   <audio id="musicLove" src="audio/musica_love.mp3" loop></audio>
   <audio id="musicFinal" src="audio/musica_final.mp3" loop></audio>
 
-  <!-- Botón de música -->
   <button id="musicToggle" class="music-btn" aria-label="Música">
-    <div class="music-bars">
-      <span></span><span></span><span></span><span></span><span></span>
-    </div>
+    <div class="music-bars"><span></span><span></span><span></span><span></span><span></span></div>
     <span class="music-label">Música</span>
   </button>
 
-  <!-- Canvas global -->
   <canvas id="bgCanvas"></canvas>
 
-  <!-- ═══════ INTRO ═══════ -->
+  <!-- INTRO -->
   <div class="intro-screen" id="introScreen">
     <div class="intro-overlay"></div>
     <div class="intro-estrellas-fugaces">
@@ -53,21 +48,17 @@
       <p class="intro-descripcion">
         Preparé un pequeño universo solo para ti, con recuerdos, palabras
         y un guía muy especial: yo en versión muñequito.
-        <br><br>
-        <em>Pon tus audífonos, sube el volumen y déjate llevar. 🎧</em>
+        <br><br><em>Pon tus audífonos, sube el volumen y déjate llevar. 🎧</em>
       </p>
       <button id="btnEntrar" class="btn-primary btn-entrar">
-        <span class="btn-brillo"></span>
-        Entrar al universo 💗
+        <span class="btn-brillo"></span>Entrar al universo 💗
       </button>
       <p class="intro-fecha">14 de febrero, 2026</p>
     </div>
   </div>
 
-  <!-- ═══════ MAIN ═══════ -->
+  <!-- MAIN -->
   <main class="main-wrapper" id="mainWrapper">
-
-    <!-- Avatar -->
     <section class="avatar-section">
       <div class="avatar-card">
         <div class="avatar-photo">
@@ -84,33 +75,21 @@
       </div>
     </section>
 
-    <!-- Calma -->
     <section class="section section-soft seccion-entrada" id="seccionCalma">
       <div class="seccion-icono">🌸</div>
       <h2>Primer paso: respira...</h2>
       <div class="linea-decorativa"></div>
-      <p>
-        Antes de seguir, solo quiero que sepas que cada detalle aquí
-        está pensado en ti. No es una página cualquiera, es nuestra
-        pequeña historia en versión código.
-      </p>
-      <p class="texto-secundario">
-        Cada línea, cada color, cada animación... todo tiene un pedacito de lo que siento por ti. ✨
-      </p>
+      <p>Antes de seguir, solo quiero que sepas que cada detalle aquí está pensado en ti. No es una página cualquiera, es nuestra pequeña historia en versión código.</p>
+      <p class="texto-secundario">Cada línea, cada color, cada animación... todo tiene un pedacito de lo que siento por ti. ✨</p>
     </section>
 
-    <!-- Viaje -->
     <section class="section section-espacio seccion-entrada" id="seccionLove">
       <div class="espacio-nebulosa"></div>
       <div class="espacio-contenido">
         <div class="seccion-icono">🚀</div>
         <h2>Viaje espacial por nuestros recuerdos</h2>
         <div class="linea-decorativa"></div>
-        <p>
-          Cuando pulses este botón, todo se apagará un momento
-          y empezará un viaje espacial a través de nuestros recuerdos,
-          mientras suena una canción que para mí nos queda perfecta.
-        </p>
+        <p>Cuando pulses este botón, todo se apagará un momento y empezará un viaje espacial a través de nuestros recuerdos, mientras suena una canción que para mí nos queda perfecta.</p>
         <p class="texto-secundario">🎵 Los Panchos — <em>Contigo</em> 🎵</p>
         <button class="btn-primary btn-viajar" id="btnViajar">
           <span class="btn-brillo"></span>
@@ -120,7 +99,6 @@
       </div>
     </section>
 
-    <!-- Pregunta -->
     <section class="section section-pregunta seccion-entrada" id="seccionFinal">
       <div class="pregunta-estrellas"></div>
       <div class="seccion-icono">💝</div>
@@ -131,155 +109,67 @@
         <p>¿Quieres seguir siendo mi persona favorita en este universo? 🌌</p>
       </div>
       <div class="final-buttons">
-        <button class="btn-final btn-si" id="btnSi">
-          <span class="btn-brillo"></span>
-          Sí, quiero ser tu San Valentín ❤️
-        </button>
-        <button class="btn-final btn-pensar" id="btnPensar">
-          Tengo que pensarlo (pero ya sabes la respuesta) 😏
-        </button>
+        <button class="btn-final btn-si" id="btnSi"><span class="btn-brillo"></span>Sí, quiero ser tu San Valentín ❤️</button>
+        <button class="btn-final btn-pensar" id="btnPensar">Tengo que pensarlo (pero ya sabes la respuesta) 😏</button>
       </div>
       <p class="final-msg" id="finalMsg"></p>
     </section>
-
   </main>
 
-  <!-- ═══════ VIAJE ESPACIAL WARP ═══════ -->
+  <!-- VIAJE WARP -->
   <div class="viaje-overlay" id="viajeOverlay">
     <canvas id="warpCanvas"></canvas>
     <div class="viaje-nebulosa"></div>
-
     <div class="viaje-contenido">
-      <div class="nave-wrapper">
-        <div class="nave">
-          <div class="nave-cuerpo"></div>
-          <div class="nave-llama"></div>
-        </div>
-      </div>
-
-      <p class="viaje-texto" id="viajeTexto">
-        Viajando por un universo lleno de momentos Contigo...
-      </p>
-
+      <div class="nave-wrapper"><div class="nave"><div class="nave-cuerpo"></div><div class="nave-llama"></div></div></div>
+      <p class="viaje-texto" id="viajeTexto">Viajando por un universo lleno de momentos Contigo...</p>
       <div class="viaje-hud">
-        <div class="viaje-indicador">
-          <span id="viajeContador">1</span> / <span id="viajeTotal">21</span>
-        </div>
-        <div class="viaje-barra-progreso">
-          <div class="viaje-barra-fill" id="viajeBarraFill"></div>
-        </div>
+        <div class="viaje-indicador"><span id="viajeContador">1</span> / <span id="viajeTotal">21</span></div>
+        <div class="viaje-barra-progreso"><div class="viaje-barra-fill" id="viajeBarraFill"></div></div>
       </div>
-
-      <button class="btn-salir-viaje" id="btnSalirViaje">
-        Terminar viaje ✨
-      </button>
+      <button class="btn-salir-viaje" id="btnSalirViaje">Terminar viaje ✨</button>
     </div>
-
-    <!-- Recuerdos (ocultos, el JS los lee) -->
     <div style="display:none;" id="viajeCarril">
-      <div class="viaje-item foto">
-        <img src="img/comienzo.jpg" alt="Nuestro comienzo">
-        <span>Nuestro comienzo, donde todo empezó sin que lo imagináramos.</span>
-      </div>
-      <div class="viaje-item foto">
-        <img src="img/ojos_ella.jpg" alt="Sus ojos">
-        <span>Tus ojos, el lugar donde siempre termino perdiéndome.</span>
-      </div>
-      <div class="viaje-item foto">
-        <img src="img/abrazo_comida.jpg" alt="Abrazo y comida">
-        <span>Nosotros abrazados, la mesa llena y el corazón también.</span>
-      </div>
-      <div class="viaje-item video">
-        <video src="video/primer_imprevisto.mp4" muted loop playsinline></video>
-        <span>El primer video que grabamos cuando te dije que salgas sin avisar.</span>
-      </div>
-      <div class="viaje-item foto">
-        <img src="img/manos.jpg" alt="Nuestras manos">
-        <span>Nuestras manos, como promesa silenciosa de no soltarnos.</span>
-      </div>
-      <div class="viaje-item foto">
-        <img src="img/dibujo_para_ella.jpg" alt="Dibujo para ti">
-        <span>Un dibujo hecho pensando solo en ti.</span>
-      </div>
-      <div class="viaje-item foto">
-        <img src="img/ojos_juntos.jpg" alt="Nuestros ojos juntos">
-        <span>Nuestros ojos juntos, como si el mundo fuera solo este cuadrito.</span>
-      </div>
-      <div class="viaje-item video">
-        <video src="video/pintar_trend.mp4" muted loop playsinline></video>
-        <span>Aquel día que fuimos a pintar e hicimos un trend que nunca olvidaré.</span>
-      </div>
-      <div class="viaje-item video">
-        <video src="video/enfocandote.mp4" muted loop playsinline></video>
-        <span>Primero yo grabando, y luego enfocándote a ti, como siempre termino haciendo.</span>
-      </div>
-      <div class="viaje-item foto">
-        <img src="img/cena_incompleta.jpg" alt="La cena que no terminamos">
-        <span>La cena que no pudimos acabar, pero que se quedó completa en mi memoria.</span>
-      </div>
-      <div class="viaje-item foto">
-        <img src="img/primera_navidad.jpg" alt="Nuestra primera Navidad">
-        <span>Nuestra primera Navidad juntos, luces, amor y el comienzo de nuevas tradiciones.</span>
-      </div>
-      <div class="viaje-item video">
-        <video src="video/trend_24diciembre.mp4" muted loop playsinline></video>
-        <span>Mi 24 de diciembre Contigo, haciendo trends con todo el corazón en Noche Buena.</span>
-      </div>
-      <div class="viaje-item foto">
-        <img src="img/ano_nuevo.jpg" alt="Año Nuevo juntos">
-        <span>Año Nuevo Contigo, brindando por todos los que vendrán a tu lado.</span>
-      </div>
-      <div class="viaje-item foto">
-        <img src="img/catedral.jpg" alt="Frente a la Catedral">
-        <span>Frente a la Catedral, como si el mundo entero fuera testigo de nosotros.</span>
-      </div>
-      <div class="viaje-item video">
-        <video src="video/curame_cargando.mp4" muted loop playsinline></video>
-        <span>Te cargué y te hice dar vueltas con el trend "Cúrame", puro amor en movimiento.</span>
-      </div>
-      <div class="viaje-item foto">
-        <img src="img/manos_cumple.jpg" alt="Manos en mi cumpleaños">
-        <span>Mis manos en mi cumpleaños, tu pulsera, las rosas, y tú haciéndolo especial.</span>
-      </div>
-      <div class="viaje-item foto">
-        <img src="img/chaleco_casco.jpg" alt="Noche especial">
-        <span>La noche más mágica que tuve en mi facultad por tenerte a mi lado.</span>
-      </div>
-      <div class="viaje-item foto">
-        <img src="img/anillos_promesa.jpg" alt="Nuestros anillos">
-        <span>Nuestras manos con los anillos de promesa, nuestro sí silencioso al futuro.</span>
-      </div>
-      <div class="viaje-item video">
-        <video src="video/sus_piernas.mp4" muted loop playsinline></video>
-        <span>En tus piernas mientras grababa, todo era perfecto, todo era bello.</span>
-      </div>
-      <div class="viaje-item video">
-        <video src="video/pista_echados.mp4" muted loop playsinline></video>
-        <span>Cuando nos fuimos a echar en la pista, tú y yo contra el mundo.</span>
-      </div>
-      <div class="viaje-item foto">
-        <img src="img/picnic_noche.jpg" alt="Picnic de noche">
-        <span>El picnic de noche Contigo, estrellas arriba, amor por todos lados.</span>
-      </div>
+      <div class="viaje-item foto"><img src="img/comienzo.jpg" alt="Nuestro comienzo"><span>Nuestro comienzo, donde todo empezó sin que lo imagináramos.</span></div>
+      <div class="viaje-item foto"><img src="img/ojos_ella.jpg" alt="Sus ojos"><span>Tus ojos, el lugar donde siempre termino perdiéndome.</span></div>
+      <div class="viaje-item foto"><img src="img/abrazo_comida.jpg" alt="Abrazo y comida"><span>Nosotros abrazados, la mesa llena y el corazón también.</span></div>
+      <div class="viaje-item video"><video src="video/primer_imprevisto.mp4" muted loop playsinline></video><span>El primer video que grabamos cuando te dije que salgas sin avisar.</span></div>
+      <div class="viaje-item foto"><img src="img/manos.jpg" alt="Nuestras manos"><span>Nuestras manos, como promesa silenciosa de no soltarnos.</span></div>
+      <div class="viaje-item foto"><img src="img/dibujo_para_ella.jpg" alt="Dibujo para ti"><span>Un dibujo hecho pensando solo en ti.</span></div>
+      <div class="viaje-item foto"><img src="img/ojos_juntos.jpg" alt="Nuestros ojos juntos"><span>Nuestros ojos juntos, como si el mundo fuera solo este cuadrito.</span></div>
+      <div class="viaje-item video"><video src="video/pintar_trend.mp4" muted loop playsinline></video><span>Aquel día que fuimos a pintar e hicimos un trend que nunca olvidaré.</span></div>
+      <div class="viaje-item video"><video src="video/enfocandote.mp4" muted loop playsinline></video><span>Primero yo grabando, y luego enfocándote a ti, como siempre termino haciendo.</span></div>
+      <div class="viaje-item foto"><img src="img/cena_incompleta.jpg" alt="La cena que no terminamos"><span>La cena que no pudimos acabar, pero que se quedó completa en mi memoria.</span></div>
+      <div class="viaje-item foto"><img src="img/primera_navidad.jpg" alt="Nuestra primera Navidad"><span>Nuestra primera Navidad juntos, luces, amor y el comienzo de nuevas tradiciones.</span></div>
+      <div class="viaje-item video"><video src="video/trend_24diciembre.mp4" muted loop playsinline></video><span>Mi 24 de diciembre Contigo, haciendo trends con todo el corazón en Noche Buena.</span></div>
+      <div class="viaje-item foto"><img src="img/ano_nuevo.jpg" alt="Año Nuevo juntos"><span>Año Nuevo Contigo, brindando por todos los que vendrán a tu lado.</span></div>
+      <div class="viaje-item foto"><img src="img/catedral.jpg" alt="Frente a la Catedral"><span>Frente a la Catedral, como si el mundo entero fuera testigo de nosotros.</span></div>
+      <div class="viaje-item video"><video src="video/curame_cargando.mp4" muted loop playsinline></video><span>Te cargué y te hice dar vueltas con el trend "Cúrame", puro amor en movimiento.</span></div>
+      <div class="viaje-item foto"><img src="img/manos_cumple.jpg" alt="Manos en mi cumpleaños"><span>Mis manos en mi cumpleaños, tu pulsera, las rosas, y tú haciéndolo especial.</span></div>
+      <div class="viaje-item foto"><img src="img/chaleco_casco.jpg" alt="Noche especial"><span>La noche más mágica que tuve en mi facultad por tenerte a mi lado.</span></div>
+      <div class="viaje-item foto"><img src="img/anillos_promesa.jpg" alt="Nuestros anillos"><span>Nuestras manos con los anillos de promesa, nuestro sí silencioso al futuro.</span></div>
+      <div class="viaje-item video"><video src="video/sus_piernas.mp4" muted loop playsinline></video><span>En tus piernas mientras grababa, todo era perfecto, todo era bello.</span></div>
+      <div class="viaje-item video"><video src="video/pista_echados.mp4" muted loop playsinline></video><span>Cuando nos fuimos a echar en la pista, tú y yo contra el mundo.</span></div>
+      <div class="viaje-item foto"><img src="img/picnic_noche.jpg" alt="Picnic de noche"><span>El picnic de noche Contigo, estrellas arriba, amor por todos lados.</span></div>
     </div>
   </div>
 
-  <!-- ═══════ CIERRE FINAL ═══════ -->
+  <!-- CIERRE FINAL -->
   <section class="cierre-final" id="cierreFinal" style="display:none;">
     <canvas id="cierreCanvas"></canvas>
     <div class="cierre-corazones" id="cierreCorazones"></div>
     <div class="cierre-contenido">
 
+      <!-- Fase 1: Sobre -->
       <div class="cierre-fase fase-typewriter" id="cierreFase1">
         <div class="cierre-sobre" id="cierreSobre">
           <div class="sobre-tapa"></div>
-          <div class="sobre-cuerpo">
-            <div class="sobre-carta">💌</div>
-          </div>
+          <div class="sobre-cuerpo"><div class="sobre-carta">💌</div></div>
           <p class="sobre-instruccion">Toca el sobre...</p>
         </div>
       </div>
 
+      <!-- Fase 2: Carta -->
       <div class="cierre-fase fase-carta" id="cierreFase2" style="display:none;">
         <div class="carta-final">
           <div class="carta-brillo"></div>
@@ -290,36 +180,25 @@
         </div>
       </div>
 
-      <div class="cierre-fase fase-galeria" id="cierreFase3" style="display:none;">
-        <h2 class="galeria-titulo">Tú y Yo, Siempre 📸</h2>
-        <div class="polaroid-grid" id="polaroidGrid">
-          <div class="polaroid" style="--delay:0s; --rot:-3deg;">
-            <div class="polaroid-inner">
-              <img src="img/nosotros1.jpg" alt="Nosotros">
-              <span>Nuestro primer día ✨</span>
-            </div>
+      <!-- Fase 3: MUNDO 3D DEL AMOR (NUEVO) -->
+      <div class="cierre-fase fase-mundo" id="cierreFase3" style="display:none;">
+        <h2 class="mundo-titulo">Nuestro Mundo 🌍💖</h2>
+        <p class="mundo-subtitulo">Todo lo que gira a nuestro alrededor es amor</p>
+        <div class="mundo-escena">
+          <div class="mundo-esfera" id="mundoEsfera">
+            <!-- Las órbitas con elementos se crean por JS -->
           </div>
-          <div class="polaroid" style="--delay:0.3s; --rot:2deg;">
-            <div class="polaroid-inner">
-              <img src="img/nosotros2.jpg" alt="Nosotros">
-              <span>Tu sonrisa, mi debilidad 🥰</span>
-            </div>
-          </div>
-          <div class="polaroid" style="--delay:0.6s; --rot:-2deg;">
-            <div class="polaroid-inner">
-              <img src="img/nosotros3.jpg" alt="Nosotros">
-              <span>Juntos contra todo 💪</span>
-            </div>
-          </div>
-          <div class="polaroid" style="--delay:0.9s; --rot:3deg;">
-            <div class="polaroid-inner">
-              <img src="img/nosotros4.jpg" alt="Nosotros">
-              <span>Por siempre, mi amor 💍</span>
-            </div>
-          </div>
+          <div class="mundo-centro-glow"></div>
+        </div>
+        <div class="mundo-fotos-flotantes" id="mundoFotos">
+          <img src="img/nosotros1.jpg" class="mundo-foto mf-1" alt="">
+          <img src="img/nosotros2.jpg" class="mundo-foto mf-2" alt="">
+          <img src="img/nosotros3.jpg" class="mundo-foto mf-3" alt="">
+          <img src="img/nosotros4.jpg" class="mundo-foto mf-4" alt="">
         </div>
       </div>
 
+      <!-- Fase 4: Promesas -->
       <div class="cierre-fase fase-promesas" id="cierreFase4" style="display:none;">
         <div class="corazon-grande" id="corazonGrande">
           <div class="corazon-svg">
@@ -338,6 +217,7 @@
         <div class="promesas-lista" id="promesasLista"></div>
       </div>
 
+      <!-- Fase 5: Te Amo + Contador -->
       <div class="cierre-fase fase-final" id="cierreFase5" style="display:none;">
         <div class="final-explosivo">
           <div class="anillo-luz anillo-1"></div>
