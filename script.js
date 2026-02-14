@@ -5,18 +5,22 @@ const mainWrapper = document.getElementById('mainWrapper');
 
 // Músicas
 const musicIntro = document.getElementById('musicIntro');
-const musicLove = document.getElementById('musicLove');      // Aquí va "Contigo"
-const musicFinal = document.getElementById('musicFinal');    // Aquí va "Escalera al cielo"
+const musicLove = document.getElementById('musicLove');      // Contigo
+const musicFinal = document.getElementById('musicFinal');    // Escalera al cielo
 const musicToggle = document.getElementById('musicToggle');
 
 // Avatar y secciones
 const avatarDialog = document.getElementById('avatarDialog');
-const seccionLove = document.getElementById('seccionLove');       // viaje espacial
+const seccionLove = document.getElementById('seccionLove');
 const seccionFinal = document.getElementById('seccionFinal');
 
-// Viaje espacial (slides de recuerdos)
-const espacioSlides = document.querySelectorAll('.espacio-slide');
-const espacioTexto = document.getElementById('espacioTexto');
+// Viaje espacial
+const btnViajar = document.getElementById('btnViajar');
+const viajeOverlay = document.getElementById('viajeOverlay');
+const viajeCarril = document.getElementById('viajeCarril');
+const viajeTexto = document.getElementById('viajeTexto');
+const btnSalirViaje = document.getElementById('btnSalirViaje');
+const viajeItems = document.querySelectorAll('.viaje-item');
 
 // Botones finales
 const btnSi = document.getElementById('btnSi');
@@ -27,25 +31,27 @@ const finalMsg = document.getElementById('finalMsg');
 const mensajes = [
   "Hola, soy tu guía personal de San Valentín. Prometo acompañarte en cada parte de este regalo que hice solo para ti. 💖",
   "Primero, respira... estás entrando a un lugar donde todo está hecho pensando en ti. ✨",
-  "Desliza un poquito hacia abajo, hay más sorpresas esperándote justo aquí. 🌌"
+  "Desliza un poquito hacia abajo, tengo algo preparado para ti. 🌌"
 ];
 
 let indiceMensaje = 0;
 let musicaActual = null;
 let musicaActiva = false;
-let loveActivado = false;
 let finalActivado = false;
 
-// Viaje espacial: textos para cada recuerdo
+// Viaje espacial: textos para algunas escenas (las demás repiten el último)
 let indiceSlide = 0;
 const textosViaje = [
   "Todo empezó con momentos simples, pero que para mí ya eran especiales.",
   "Luego vinieron días que no olvido, porque estabas tú ahí.",
   "Tu sonrisa se volvió mi lugar seguro en este universo.",
+  "Entre fotos, videos, ramos y comida, siempre hay algo en común: tú.",
   "Y en algún punto del viaje entendí que ya no quería bajarme de esto Contigo."
 ];
 
-// Función para reproducir cualquier música
+let intervaloViaje = null;
+
+// Función para reproducir música
 async function reproducir(musica) {
   if (musicaActual && musicaActual !== musica) {
     musicaActual.pause();
@@ -72,18 +78,18 @@ function mostrarSiguienteMensaje() {
 
 // Avanzar en el viaje espacial
 function avanzarViaje() {
-  if (!espacioSlides.length) return;
+  if (!viajeItems.length) return;
 
-  espacioSlides.forEach((slide) => {
-    slide.style.transition = 'transform 0.8s ease';
-    slide.style.transform = `translateX(-${indiceSlide * 100}%)`;
+  viajeItems.forEach((item) => {
+    item.style.transition = 'transform 0.8s ease';
+    item.style.transform = `translateX(-${indiceSlide * 100}%)`;
   });
 
   const texto = textosViaje[indiceSlide] || textosViaje[textosViaje.length - 1];
-  espacioTexto.textContent = texto;
+  viajeTexto.textContent = texto;
 
   indiceSlide++;
-  if (indiceSlide >= espacioSlides.length) {
+  if (indiceSlide >= viajeItems.length) {
     indiceSlide = 0;
   }
 }
@@ -99,7 +105,7 @@ btnEntrar.addEventListener('click', async () => {
   setTimeout(mostrarSiguienteMensaje, 9000);
 });
 
-// Botón de música (pausar / continuar)
+// Botón de música
 musicToggle.addEventListener('click', async () => {
   if (!musicaActual) {
     await reproducir(musicIntro);
@@ -115,25 +121,35 @@ musicToggle.addEventListener('click', async () => {
   }
 });
 
-// Cambios según scroll (Contigo + final)
+// Botón "Iniciar viaje espacial"
+btnViajar.addEventListener('click', () => {
+  viajeOverlay.classList.add('activo');
+
+  reproducir(musicLove); // Contigo
+  avatarDialog.textContent = "Prepárate, vamos a viajar por todo lo que hemos vivido Contigo. 🚀";
+
+  indiceSlide = 0;
+  avanzarViaje();
+  clearInterval(intervaloViaje);
+  intervaloViaje = setInterval(avanzarViaje, 4500); // ~40 escenas en 3 minutos
+});
+
+// Botón "Terminar viaje"
+btnSalirViaje.addEventListener('click', () => {
+  viajeOverlay.classList.remove('activo');
+  clearInterval(intervaloViaje);
+  viajeTexto.textContent = "Viajando por un universo lleno de momentos Contigo...";
+  avatarDialog.textContent = "Podemos seguir bajando, todavía tengo algo más que preguntarte. ❤️";
+});
+
+// Cuando baja al final → música final
 window.addEventListener('scroll', () => {
-  const loveTop = seccionLove.getBoundingClientRect().top;
   const finalTop = seccionFinal.getBoundingClientRect().top;
   const viewportHeight = window.innerHeight;
 
-  // Cuando entra sección "Viaje espacial / Contigo"
-  if (!loveActivado && loveTop < viewportHeight * 0.7) {
-    loveActivado = true;
-    reproducir(musicLove); // aquí suena Contigo
-    avatarDialog.textContent = "Abro este viaje espacial para que recorramos nuestros recuerdos Contigo. 🚀";
-    avanzarViaje();
-    setInterval(avanzarViaje, 6000); // cambia de recuerdo cada 6 segundos
-  }
-
-  // Cuando entra la sección final
   if (!finalActivado && finalTop < viewportHeight * 0.7) {
     finalActivado = true;
-    reproducir(musicFinal); // aquí Escalera al cielo
+    reproducir(musicFinal);
     avatarDialog.textContent = "Llegamos a la parte importante... tengo algo que preguntarte. ❤️";
   }
 });
@@ -148,4 +164,3 @@ btnPensar.addEventListener('click', () => {
   finalMsg.textContent = "Está bien, tómate tu tiempo... pero en el fondo sé que ya tienes la respuesta. 💫";
   avatarDialog.textContent = "No importa cuánto lo pienses, mi respuesta siempre será la misma: me encantas. 🌙";
 });
-
