@@ -11,7 +11,6 @@ const musicToggle = document.getElementById('musicToggle');
 
 // Avatar y secciones
 const avatarDialog = document.getElementById('avatarDialog');
-const seccionLove = document.getElementById('seccionLove');
 const seccionFinal = document.getElementById('seccionFinal');
 
 // Viaje espacial
@@ -39,19 +38,19 @@ let musicaActual = null;
 let musicaActiva = false;
 let finalActivado = false;
 
-// Viaje espacial: textos para algunas escenas (las demás repiten el último)
+// Viaje espacial
 let indiceSlide = 0;
+let intervaloViaje = null;
+
 const textosViaje = [
   "Todo empezó con momentos simples, pero que para mí ya eran especiales.",
   "Luego vinieron días que no olvido, porque estabas tú ahí.",
   "Tu sonrisa se volvió mi lugar seguro en este universo.",
-  "Entre fotos, videos, ramos y comida, siempre hay algo en común: tú.",
+  "Entre fotos y videos, siempre hay algo en común: tú.",
   "Y en algún punto del viaje entendí que ya no quería bajarme de esto Contigo."
 ];
 
-let intervaloViaje = null;
-
-// Función para reproducir música
+// Reproducir música de fondo
 async function reproducir(musica) {
   if (musicaActual && musicaActual !== musica) {
     musicaActual.pause();
@@ -76,13 +75,25 @@ function mostrarSiguienteMensaje() {
   avatarDialog.textContent = mensajes[indiceMensaje];
 }
 
-// Avanzar en el viaje espacial
+// Avanzar en el viaje (fotos + videos)
 function avanzarViaje() {
   if (!viajeItems.length) return;
 
-  viajeItems.forEach((item) => {
+  viajeItems.forEach((item, index) => {
     item.style.transition = 'transform 0.8s ease';
     item.style.transform = `translateX(-${indiceSlide * 100}%)`;
+
+    const video = item.querySelector('video');
+    if (video) {
+      if (index === indiceSlide) {
+        // Escena visible → intentar reproducir
+        video.play().catch(() => {});
+      } else {
+        // Escenas que no se ven → pausar y resetear
+        video.pause();
+        video.currentTime = 0;
+      }
+    }
   });
 
   const texto = textosViaje[indiceSlide] || textosViaje[textosViaje.length - 1];
@@ -131,7 +142,7 @@ btnViajar.addEventListener('click', () => {
   indiceSlide = 0;
   avanzarViaje();
   clearInterval(intervaloViaje);
-  intervaloViaje = setInterval(avanzarViaje, 4500); // ~40 escenas en 3 minutos
+  intervaloViaje = setInterval(avanzarViaje, 4500); // pensado para ~40 escenas en 3 min
 });
 
 // Botón "Terminar viaje"
@@ -140,9 +151,18 @@ btnSalirViaje.addEventListener('click', () => {
   clearInterval(intervaloViaje);
   viajeTexto.textContent = "Viajando por un universo lleno de momentos Contigo...";
   avatarDialog.textContent = "Podemos seguir bajando, todavía tengo algo más que preguntarte. ❤️";
+
+  // Pausar cualquier video que haya quedado sonando
+  viajeItems.forEach(item => {
+    const video = item.querySelector('video');
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
 });
 
-// Cuando baja al final → música final
+// Scroll: cuando llega a la sección final → música final
 window.addEventListener('scroll', () => {
   const finalTop = seccionFinal.getBoundingClientRect().top;
   const viewportHeight = window.innerHeight;
