@@ -775,7 +775,7 @@ document.addEventListener('DOMContentLoaded', function () {
       cierreFase3.style.display='flex';
       construirMundo3D();
       iniciarHologramaMundo();
-      setTimeout(mostrarFase4,28000);
+      setTimeout(mostrarFase4,10000);
     },1300);
   }
 
@@ -885,7 +885,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     mostrarUno();
-    setInterval(mostrarUno, 7000);
+    setInterval(mostrarUno, 28000);
   }
 
   // FASE 4: Promesas
