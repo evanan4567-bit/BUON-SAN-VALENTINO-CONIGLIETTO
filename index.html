@@ -36,17 +36,16 @@
     <section class="avatar-section">
       <div class="avatar-card">
         <div class="avatar-photo">
-          <!-- Tu foto -->
           <img src="img/avatar.jpg" alt="Mi avatar" class="avatar-img">
         </div>
         <div class="avatar-dialog" id="avatarDialog">
-          Hola, soy tu guía personal de San Valentín.  
+          Hola, soy tu guía personal de San Valentín.
           Prometo acompañarte en cada parte de este regalo que hice solo para ti. 💖
         </div>
       </div>
     </section>
 
-    <!-- Sección 1 -->
+    <!-- Sección calma -->
     <section class="section section-soft" id="seccionCalma">
       <h2>Primer paso: respira...</h2>
       <p>
@@ -56,47 +55,21 @@
       </p>
     </section>
 
-    <!-- Viaje espacial con Contigo -->
+    <!-- Sección: botón para viaje espacial -->
     <section class="section section-espacio" id="seccionLove">
       <h2>Viaje espacial por nuestros recuerdos</h2>
       <p>
-        Cada recuerdo contigo es como una parada en este viaje espacial.
-        Mientras suena esta canción, quiero llevarte por algunos momentos
-        que para mí valen un universo entero.
+        Cuando pulses este botón, todo se apagará un momento
+        y empezará un viaje espacial a través de nuestros recuerdos,
+        mientras suena una canción que para mí nos queda perfecta.
       </p>
 
-      <div class="espacio-tunel">
-
-        <!-- “Ventanas” del viaje: cambia las imágenes por las tuyas -->
-        <div class="espacio-slide">
-          <img src="img/recuerdo1.jpg" alt="Recuerdo 1">
-          <span>Nuestro comienzo</span>
-        </div>
-
-        <div class="espacio-slide">
-          <img src="img/recuerdo2.jpg" alt="Recuerdo 2">
-          <span>Ese día que no olvido</span>
-        </div>
-
-        <div class="espacio-slide">
-          <img src="img/recuerdo3.jpg" alt="Recuerdo 3">
-          <span>Tu sonrisa, mi lugar favorito</span>
-        </div>
-
-        <div class="espacio-slide">
-          <img src="img/recuerdo4.jpg" alt="Recuerdo 4">
-          <span>El momento en que supe que eras especial</span>
-        </div>
-
-      </div>
-
-      <p class="espacio-texto" id="espacioTexto">
-        Deja que el viaje avance, cada imagen es una estación de este viaje Contigo.
-      </p>
+      <button class="btn-primary" id="btnViajar">
+        Iniciar viaje espacial Contigo 🚀
+      </button>
     </section>
 
-
-    <!-- Sección 3: final (música final) -->
+    <!-- Sección final -->
     <section class="section section-soft" id="seccionFinal">
       <h2>La pregunta importante</h2>
       <p>
@@ -117,6 +90,85 @@
     </section>
 
   </main>
+
+  <!-- Overlay de viaje espacial -->
+  <div class="viaje-overlay" id="viajeOverlay">
+    <div class="viaje-fondo-estrellas"></div>
+
+    <div class="viaje-contenido">
+      <!-- Nave -->
+      <div class="nave">
+        <div class="nave-cuerpo"></div>
+        <div class="nave-llama"></div>
+      </div>
+
+      <!-- Carril de recuerdos (ejemplos de 8, tú luego amplías hasta 40) -->
+      <div class="viaje-carril" id="viajeCarril">
+
+        <!-- 1 -->
+        <div class="viaje-item foto">
+          <img src="img/recuerdo1.jpg" alt="Recuerdo 1">
+          <span>Nuestro comienzo</span>
+        </div>
+
+        <!-- 2 -->
+        <div class="viaje-item texto">
+          <div class="viaje-card">
+            <p>Te amo más de lo que alcanzo a decir en palabras.</p>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="viaje-item foto">
+          <img src="img/recuerdo2.jpg" alt="Recuerdo 2">
+          <span>Un día que quiero repetir mil veces</span>
+        </div>
+
+        <!-- 4 -->
+        <div class="viaje-item sticker">
+          <div class="viaje-card">
+            <p>💐🌮💋 Todo lo rico, contigo sabe mejor.</p>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="viaje-item foto">
+          <img src="img/recuerdo3.jpg" alt="Recuerdo 3">
+          <span>Tu sonrisa, mi lugar favorito</span>
+        </div>
+
+        <!-- 6 -->
+        <div class="viaje-item texto">
+          <div class="viaje-card">
+            <p>Cada foto es una prueba de que quiero seguir sumando momentos así.</p>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="viaje-item foto">
+          <img src="img/recuerdo4.jpg" alt="Recuerdo 4">
+          <span>Ese momento en que sentí que ya nada era igual sin ti</span>
+        </div>
+
+        <!-- 8 -->
+        <div class="viaje-item sticker">
+          <div class="viaje-card">
+            <p>🍕🎂☕ Desde la comida hasta los detalles, todo tiene más sentido contigo.</p>
+          </div>
+        </div>
+
+        <!-- Aquí seguirás agregando hasta llegar a unas 40 escenas -->
+      </div>
+
+      <p class="viaje-texto" id="viajeTexto">
+        Viajando por un universo lleno de momentos Contigo...
+      </p>
+
+      <button class="btn-salir-viaje" id="btnSalirViaje">
+        Terminar viaje ✨
+      </button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
