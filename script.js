@@ -132,6 +132,24 @@ musicToggle.addEventListener('click', async () => {
   }
 });
 
+let intervaloViaje = null;
+const DURACION_FOTO = 4000;   // 4 s para imágenes
+const DURACION_VIDEO = 10000; // 10 s para videos
+
+function programarSiguienteSlide() {
+  if (!viajeItems.length) return;
+
+  const itemActual = viajeItems[indiceSlide];
+  const esVideo = !!itemActual.querySelector('video');
+  const espera = esVideo ? DURACION_VIDEO : DURACION_FOTO;
+
+  clearTimeout(intervaloViaje);
+  intervaloViaje = setTimeout(() => {
+    avanzarViaje();
+    programarSiguienteSlide();
+  }, espera);
+}
+
 // Botón "Iniciar viaje espacial"
 btnViajar.addEventListener('click', () => {
   viajeOverlay.classList.add('activo');
@@ -141,18 +159,16 @@ btnViajar.addEventListener('click', () => {
 
   indiceSlide = 0;
   avanzarViaje();
-  clearInterval(intervaloViaje);
-  intervaloViaje = setInterval(avanzarViaje, 4500); // pensado para ~40 escenas en 3 min
+  programarSiguienteSlide();
 });
 
 // Botón "Terminar viaje"
 btnSalirViaje.addEventListener('click', () => {
   viajeOverlay.classList.remove('activo');
-  clearInterval(intervaloViaje);
+  clearTimeout(intervaloViaje);
   viajeTexto.textContent = "Viajando por un universo lleno de momentos Contigo...";
   avatarDialog.textContent = "Podemos seguir bajando, todavía tengo algo más que preguntarte. ❤️";
 
-  // Pausar cualquier video que haya quedado sonando
   viajeItems.forEach(item => {
     const video = item.querySelector('video');
     if (video) {
